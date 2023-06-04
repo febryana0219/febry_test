@@ -31,11 +31,6 @@ class KendaraanController extends Controller
         return response()->json($result, $result['status']);
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
         $data = $request->only([
@@ -78,11 +73,6 @@ class KendaraanController extends Controller
             ];
         }
         return response()->json($result, $result['status']);
-    }
-
-    public function edit(Kendaraan $kendaraan)
-    {
-        //
     }
 
     public function update(Request $request, $id)

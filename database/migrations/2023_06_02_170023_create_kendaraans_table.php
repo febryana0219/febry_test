@@ -14,7 +14,7 @@ class CreateKendaraansTable extends Migration
     public function up()
     {
         Schema::create('kendaraans', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id');
             $table->string('jenis');
             $table->string('merk');
             $table->string('mesin');

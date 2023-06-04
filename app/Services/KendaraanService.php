@@ -67,22 +67,9 @@ class KendaraanService
             throw new InvalidArgumentException($validator->errors()->first());
         }
 
-        DB::beginTransaction();
+        $result = $this->kendaraanRepository->update($data, $id);
 
-        try {
-            $kendaraan = $this->kendaraanRepository->update($data, $id);
-
-        } catch (Exception $e) {
-            DB::rollBack();
-            Log::info($e->getMessage());
-
-            throw new InvalidArgumentException('Unable to update kendaraan data');
-        }
-
-        DB::commit();
-
-        return $kendaraan;
-
+        return $result;
     }
 
     public function saveKendaraanData($data)
