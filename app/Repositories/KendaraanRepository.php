@@ -20,15 +20,23 @@ class KendaraanRepository
 
     public function getById($id)
     {
-        return $this->kendaraan->where('id', $id)->get();
+        return $this->kendaraan->where('_id', $id)->get();
     }
 
     public function save($data)
     {
         $kendaraan = new $this->kendaraan;
 
-        $kendaraan->title = $data['title'];
-        $kendaraan->description = $data['description'];
+        $kendaraan->jenis = $data['jenis'];
+        $kendaraan->merk = $data['merk'];
+        $kendaraan->mesin = $data['mesin'];
+        $kendaraan->kapasitas = $data['kapasitas'];
+        $kendaraan->suspensi = $data['suspensi'];
+        $kendaraan->transmisi = $data['transmisi'];
+        $kendaraan->tahun = $data['tahun'];
+        $kendaraan->warna = $data['warna'];
+        $kendaraan->harga = $data['harga'];
+        $kendaraan->stok = $data['stok'];
 
         $kendaraan->save();
 
@@ -38,9 +46,16 @@ class KendaraanRepository
     public function update($data, $id)
     {
         $kendaraan = $this->kendaraan->find($id);
-
-        $kendaraan->title = $data['title'];
-        $kendaraan->description = $data['description'];
+        $kendaraan->jenis = $data['jenis'];
+        $kendaraan->merk = $data['merk'];
+        $kendaraan->mesin = $data['mesin'];
+        $kendaraan->kapasitas = $data['kapasitas'];
+        $kendaraan->suspensi = $data['suspensi'];
+        $kendaraan->transmisi = $data['transmisi'];
+        $kendaraan->tahun = $data['tahun'];
+        $kendaraan->warna = $data['warna'];
+        $kendaraan->harga = $data['harga'];
+        $kendaraan->stok = $data['stok'];
 
         $kendaraan->update();
 

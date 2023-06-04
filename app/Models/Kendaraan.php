@@ -15,6 +15,10 @@ class Kendaraan extends Model
     protected $fillable = [
         'jenis',
         'merk',
+        'mesin',
+        'kapasitas',
+        'suspensi',
+        'transmisi',
         'tahun',
         'warna',
         'harga',

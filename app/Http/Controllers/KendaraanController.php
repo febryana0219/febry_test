@@ -39,8 +39,16 @@ class KendaraanController extends Controller
     public function store(Request $request)
     {
         $data = $request->only([
-            'title',
-            'description',
+            'jenis',
+            'merk',
+            'mesin',
+            'kapasitas',
+            'suspensi',
+            'transmisi',
+            'tahun',
+            'warna',
+            'harga',
+            'stok'
         ]);
 
         $result = ['status' => 200];
@@ -80,8 +88,16 @@ class KendaraanController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->only([
-            'title',
-            'description'
+            'jenis',
+            'merk',
+            'mesin',
+            'kapasitas',
+            'suspensi',
+            'transmisi',
+            'tahun',
+            'warna',
+            'harga',
+            'stok'
         ]);
 
         $result = ['status' => 200];

@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\KendaraanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +30,9 @@ Route::group([
     Route::post('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
+
+Route::get('kendaraan', [KendaraanController::class, 'index']);
+Route::post('kendaraan-create', [KendaraanController::class, 'store']);
+Route::get('kendaraan-show/{id}', [KendaraanController::class, 'show']);
+Route::post('kendaraan-update', [KendaraanController::class, 'update']);
+Route::post('kendaraan-delete', [KendaraanController::class, 'destroy']);
