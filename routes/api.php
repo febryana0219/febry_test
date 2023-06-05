@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KendaraanController;
+use App\Http\Controllers\PenjualanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,6 @@ Route::post('/kendaraan', [KendaraanController::class, 'store']);
 Route::get('/kendaraan/{id}', [KendaraanController::class, 'show']);
 Route::patch('/kendaraan/{id}', [KendaraanController::class, 'update']);
 Route::delete('/kendaraan/{id}', [KendaraanController::class, 'destroy']);
+
+Route::get('/penjualan', [PenjualanController::class, 'index']);
+Route::post('/penjualan', [PenjualanController::class, 'store']);
